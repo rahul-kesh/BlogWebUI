@@ -1,0 +1,35 @@
+<div class="card h-100">
+    <img [src]="data.featuredImageUrl" class="card-img-top" [alt]="data.title">
+    <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+            {{data.title}}
+        </h5>
+        <p class="card-text">
+            {{data.shortDescription}}
+        </p>
+        <div class="bottom-part d-flex align-items-end" style="flex: 1">
+            <a [routerLink]="['/blog', data.urlHandle]" class="btn btn-primary">
+                Read More
+            </a>
+            <div>
+                <button [ngClass]="data.isActive ? 'heart-Active fa fa-heart' : 'heart fa fa-heart'"
+                    (click)="onLike(data.id,data.isActive)"></button>
+                <span>{{data.likeCount}}</span>
+            </div>
+            <button [ngClass]="isCommentBlockActive ? 'comment fa fa-comment': 'comment fa fa-comment'"
+                (click)="isCommentActive()"></button>
+            <span class="sign">{{data.author}}</span>
+        </div>
+        <div *ngIf="isCommentBlockActive">
+            <div id="comment-form">
+                <textarea cols="20" rows="1" id="comment-text" [(ngModel)]="comment"></textarea>
+                <button id="submit-comment-btn" class="send fa fa-send" (click)="onComment(data.id)"></button>
+            </div>
+            <div><b>Comments:</b></div>
+            <div class="blogComment" *ngFor="let blog of data.comment">
+                <div><b>{{blog.userName}}: </b>{{blog.commentText}}</div>
+            </div>
+        </div>
+
+    </div>
+</div>

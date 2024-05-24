@@ -1,0 +1,24 @@
+.required{
+  color: red;
+}
+
+.login_register {
+  background-image: url('./assets/blog_page.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+.navbar {
+  background-image: url('./assets/navbar.jfif');
+  background-size: cover;
+}
+.unauthorized {
+  background-image: url('./assets/401-Unauthorized-error.png');
+  background-size: cover;
+  height: 100vh;
+}
+.notfound{
+  background-image: url('./assets/pagenotfound.png');
+  background-size: cover;
+  width: 600px;
+  height: 600px;
+}

@@ -1,0 +1,12 @@
+<div class="container-fluid home ">
+  <div class="my-3">
+    <div class="row align-items-strech">
+      <ng-container *ngIf="blogs$ | async as blogs">
+        <div class="col-12 col-md-4 mb-3" *ngFor="let blog of blogs">.
+          <app-blog [data]="blog"></app-blog>
+    
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

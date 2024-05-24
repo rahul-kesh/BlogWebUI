@@ -1,0 +1,25 @@
+.bottom-part{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.heart{
+    color:black;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+}
+.heart-Active{
+    color: red;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+/* .highlighted {
+	color: deeppink;
+} */

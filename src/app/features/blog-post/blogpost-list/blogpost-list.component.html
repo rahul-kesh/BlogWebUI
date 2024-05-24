@@ -1,0 +1,25 @@
+<div class="container-fluid home ">
+  <div class="my-3">
+    <div class="row align-items-strech">
+      <ng-container *ngIf="blogPosts$ | async as blogs">
+        <div class="col-12 col-md-4 mb-3" *ngFor="let blog of blogs">
+          <div class="card h-100">
+            <img [src]="blog.featuredImageUrl" class="card-img-top" [alt]="blog.title">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">
+                {{blog.title}}
+              </h5>
+              <p class="card-text">
+                {{blog.shortDescription}}
+              </p>
+              <span class="d-flex align-items-end" style="flex: 1">
+                <a class="btn btn-light" [routerLink]="['/blogs/blogposts', blog.id]" class="btn btn-primary">Edit</a>
+                <button type="button" class="btn btn-danger ms-3" (click)="onDelete(blog.id)" >Delete</button> 
+              </span>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
